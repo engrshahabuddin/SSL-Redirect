@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^domainname.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.domainname.com$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
